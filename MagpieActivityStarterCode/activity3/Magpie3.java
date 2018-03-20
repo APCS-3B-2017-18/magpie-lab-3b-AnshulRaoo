@@ -26,26 +26,37 @@ public class Magpie3 {
 	 * @return a response based on the rules given
 	 */
 	public String getResponse(String statement) {
+		
 		String response = "";
+		
 		if (statement.length() == 0) {
 			response = "Say something, please.";
+			
 		} else if (findKeyword(statement, "no") >= 0) {
 			response = "Why so negative?";
+			
 		} else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
 				|| findKeyword(statement, "brother") >= 0) {
+			
 			response = "Tell me more about your family.";
-		} else if (findKeyword(statement, "Elliot") >= 0 || findKeyword(statement, "elliot") >= 0) {
-			response = "Yes, Elliot is the ruler of the observable Universe and all Domains thereof.";
-		} else if (findKeyword(statement, "Jason") >= 0 || findKeyword(statement, "jason") >= 0) {
-			response = "Jason should have added the keywords himself so that he would get something cool said about him. But he didn't!";
+			
+		} else if (findKeyword(statement, "Anshul") >= 0 || findKeyword(statement, "anshul") >= 0) {
+			response = "Anshul is indeed the GOAT!";
+			
+		} else if (findKeyword(statement, "Jake") >= 0 || findKeyword(statement, "jake") >= 0) {
+			response = "Jake is pretty cool!";
+			
 		} else if (findKeyword(statement, "Sun") >= 0 || findKeyword(statement, "sun") >= 0) {
-			response = "The sun is very hot.";
+			response = "The sun is a ball of gas.";
+			
 		} else if (findKeyword(statement, "dog") >= 0 || findKeyword(statement, "cat") >= 0) {
 	    	response = "Tell me more about your pets.";
-	    } else if (findKeyword(statement, "Dr. Petach") >= 0) {
+			
+	    } else if (findKeyword(statement, "Ms. Wong") >= 0) {
 	    	response = "She sounds like a good teacher.";
+			
 		} else {
 			response = getRandomResponse();
 		}
